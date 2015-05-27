@@ -12,6 +12,6 @@ SLOT="4"
 
 src_prepare()
 {
-	eautoreconf
-	default
+        eautoreconf
+        default
 }
