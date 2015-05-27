@@ -2,7 +2,7 @@
 <!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
 <repositories xmlns="" version="1.0">
 	<repo quality="experimental" status="unofficial">
-		<name><![CDATA[mdontu-gentoo]]></name>
+		<name><![CDATA[Mihai-s-Gentoo-overlay]]></name>
 		<description lang="en"><![CDATA[Mihai's Gentoo overlay]]></description>
 		<homepage>https://github.com/mdontu/gentoo</homepage>
 		<owner type="person">
