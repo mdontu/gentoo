@@ -1,0 +1,2 @@
+# gentoo
+My Gentoo overlay
