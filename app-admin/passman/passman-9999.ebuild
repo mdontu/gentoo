@@ -22,7 +22,7 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_configure() {
-	eqmake5
+	eqmake5 DEFINES+=WALLET_PLUGIN_DIR=\\\\\\\"/usr/$(get_libdir)/passman\\\\\\\" DEFINES+=QT_NO_DEBUG_OUTPUT
 	if use kde; then
 		cd wallets
 		eqmake4 CONFIG+=kwallet4
