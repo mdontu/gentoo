@@ -15,7 +15,7 @@ RDEPEND="
 	dev-qt/qtgui:5
 	kde? (
 		dev-qt/qtcore:4
-		kde-base/kwalletd:4
+		kde-apps/kwalletd:4
 	)
 "
 
