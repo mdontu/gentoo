@@ -1,0 +1,12 @@
+diff -uprNbd a/efi/Makefile b/efi/Makefile
+--- a/efi/Makefile	2015-06-02 21:29:58.000000000 +0300
++++ b/efi/Makefile	2015-06-30 20:10:35.617624368 +0300
+@@ -45,7 +45,7 @@ TARGETS = fakeesrt2.efi fakeesrt.efi dum
+ all : $(TARGETS)
+ 
+ %.efi : %.efi.unsigned
+-	pesign -s -i $< -o $@ --force -c 'Red Hat Test Certificate'
++	cp -f $< $@
+ 
+ %.efi.unsigned : %.so
+ 	$(OBJCOPY) -j .text -j .sdata -j .data -j .dynamic -j .dynsym \
