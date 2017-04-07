@@ -1,0 +1,46 @@
+diff -uprNb a/vboxdrv/linux/SUPDrv-linux.c b/vboxdrv/linux/SUPDrv-linux.c
+--- a/vboxdrv/linux/SUPDrv-linux.c	2015-08-21 13:44:55.000000000 +0300
++++ b/vboxdrv/linux/SUPDrv-linux.c	2015-09-27 23:00:41.204412371 +0300
+@@ -485,16 +485,8 @@ static void __exit VBoxDrvLinuxUnload(vo
+      * opened, at least we'll blindly assume that here.
+      */
+ #ifdef CONFIG_VBOXDRV_AS_MISC
+-    rc = misc_deregister(&gMiscDeviceUsr);
+-    if (rc < 0)
+-    {
+-        Log(("misc_deregister failed with rc=%#x on vboxdrvu\n", rc));
+-    }
+-    rc = misc_deregister(&gMiscDeviceSys);
+-    if (rc < 0)
+-    {
+-        Log(("misc_deregister failed with rc=%#x on vboxdrv\n", rc));
+-    }
++    misc_deregister(&gMiscDeviceUsr);
++    misc_deregister(&gMiscDeviceSys);
+ #else  /* !CONFIG_VBOXDRV_AS_MISC */
+ # ifdef CONFIG_DEVFS_FS
+     /*
+diff -uprNb a/vboxnetadp/linux/VBoxNetAdp-linux.c b/vboxnetadp/linux/VBoxNetAdp-linux.c
+--- a/vboxnetadp/linux/VBoxNetAdp-linux.c	2015-08-21 13:44:54.000000000 +0300
++++ b/vboxnetadp/linux/VBoxNetAdp-linux.c	2015-09-27 23:01:50.482371168 +0300
+@@ -427,7 +427,6 @@ static int __init VBoxNetAdpLinuxInit(vo
+  */
+ static void __exit VBoxNetAdpLinuxUnload(void)
+ {
+-    int rc;
+     Log(("VBoxNetAdpLinuxUnload\n"));
+ 
+     /*
+@@ -436,11 +435,7 @@ static void __exit VBoxNetAdpLinuxUnload
+ 
+     vboxNetAdpShutdown();
+     /* Remove control device */
+-    rc = misc_deregister(&g_CtlDev);
+-    if (rc < 0)
+-    {
+-        printk(KERN_ERR "misc_deregister failed with rc=%x\n", rc);
+-    }
++    misc_deregister(&g_CtlDev);
+ 
+     RTR0Term();
+ 
