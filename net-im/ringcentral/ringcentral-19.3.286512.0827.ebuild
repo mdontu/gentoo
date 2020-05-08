@@ -5,7 +5,7 @@ inherit fdo-mime gnome2-utils unpacker versionator
 DESCRIPTION="Video Conferencing and Web Conferencing Service"
 HOMEPAGE="https://www.ringcentral.com/"
 KEYWORDS="~amd64"
-SRC_URI="https://ringcentral.zoom.us/client/latest/${PN}_amd64.deb -> ${PN}_${PV}_amd64.deb"
+SRC_URI="http://dn.ringcentral.com/data/web/download/RCMeetings/1210/RCMeetingsClientSetup.deb -> ${PN}_${PV}-rc_amd64.deb"
 SLOT="0"
 LICENSE=""
 S="${WORKDIR}"
